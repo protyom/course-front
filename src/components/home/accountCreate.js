@@ -82,7 +82,7 @@ export const AccountCreateForm = () =>{
         }
     }
     return <Container style={{marginTop:10}}>
-        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        <Button variant="contained" color="primary" onClick={handleClickOpen}>
             Create account
         </Button>
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">

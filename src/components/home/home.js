@@ -56,7 +56,6 @@ export const AccountsList = () =>{
         const random = require('random-bigint')
         const randomForCode = random(253);
         console.log('0x' + myAccount.beta);
-        debugger;
         // eslint-disable-next-line no-undef
         let beta = BigInt('0x' + myAccount.beta);
         // eslint-disable-next-line no-undef
@@ -110,6 +109,7 @@ export const AccountsList = () =>{
                 }
             ).then(response => {
                 console.log(response);
+                window.location.reload();
             })
         })
     }

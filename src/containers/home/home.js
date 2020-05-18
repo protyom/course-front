@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {mapDispatchToProps} from "../../commands/home";
 import {AccountsList} from "../../components/home/home";
 import {AccountCreateForm} from "../../components/home/accountCreate";
+import {LogoutButton} from "../../components/home/LogoutButton";
 
 
 class Home extends React.Component{
@@ -15,6 +16,7 @@ class Home extends React.Component{
 
     render() {
         return <div>
+            <LogoutButton style={{float:'right'}}/>
             <AccountsList/>
             <AccountCreateForm/>
         </div>
