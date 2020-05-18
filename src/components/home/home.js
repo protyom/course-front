@@ -28,6 +28,7 @@ import {sha256} from "js-sha256";
 export const AccountsList = () =>{
     const [accounts, setAccounts] = useState([]);
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
     const [funds, setFunds] = useState(50);
     const [recipientUuid, setRecipientUuid] = useState("");
     const [open, setOpen] = React.useState(false);
@@ -110,6 +111,8 @@ export const AccountsList = () =>{
             ).then(response => {
                 console.log(response);
                 window.location.reload();
+            }).catch(error => {
+                setError(error.response.data.details);
             })
         })
     }
@@ -172,6 +175,7 @@ export const AccountsList = () =>{
                 <div style={{marginTop: 10}}>
                     <TextField id="uuid" label="Recipient UUID" variant="outlined" value={recipientUuid} onChange={onChangeRecipientUuid}/>
                 </div>
+                <div style={{color: 'red'}}>{error}</div>
             </DialogContent>
             <DialogActions>
                 {loading &&

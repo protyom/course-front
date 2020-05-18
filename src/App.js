@@ -8,6 +8,7 @@ import {
 import Login from "./containers/user/login";
 import Home from "./containers/home/home";
 import Register from "./containers/user/register";
+import Transactions from "./containers/home/transactions";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route exact path="/register">
                 <Register />
+            </Route>
+            <Route exact path="/transactions">
+                <Transactions />
             </Route>
         </Switch>
       </div>
